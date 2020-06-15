@@ -1,0 +1,17 @@
+.DS_Store
+
+*.log
+*.swp
+.factorypath
+target/
+
+*.iml
+.idea/
+
+.vscode/
+
+.settings/*.*
+.classpath
+.project
+
+idesensor.json

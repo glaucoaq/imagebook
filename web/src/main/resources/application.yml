@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: resourceapi
+  datasource:
+    url: "jdbc:h2:file:~/.db/imagebook;MODE=MYSQL;DATABASE_TO_LOWER=TRUE"
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+aws:
+  s3:
+    region: us-east-2
+    access-key: "use -Daws.s3.access-key"
+    secret-key: "use -Daws.s3.secret-key"

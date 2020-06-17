@@ -10,7 +10,7 @@
   </parent>
 
   <groupId>com.company.imagebook</groupId>
-  <artifactId>parent</artifactId>
+  <artifactId>imagebook</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>ImageBook App</name>
@@ -19,6 +19,9 @@
   <properties>
     <java.version>1.8</java.version>
     <encoding>utf-8</encoding>
+    <aws-java-sdk.version>1.11.799</aws-java-sdk.version>
+    <s3mock.version>0.2.6</s3mock.version>
+    <testcontainers.version>1.14.3</testcontainers.version>
   </properties>
 
   <modules>
@@ -46,6 +49,31 @@
       </exclusions>
     </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-s3</artifactId>
+        <version>${aws-java-sdk.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.findify</groupId>
+        <artifactId>s3mock_2.13</artifactId>
+        <version>${s3mock.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>mysql</artifactId>
+        <version>${testcontainers.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>${testcontainers.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <plugins>

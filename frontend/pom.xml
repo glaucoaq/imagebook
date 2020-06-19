@@ -45,7 +45,20 @@
         <version>${exec-maven-plugin.version}</version>
         <executions>
           <execution>
-            <id>angular unit tests</id>
+            <id>npm-install</id>
+            <phase>test</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>npm</executable>
+              <arguments>
+                <argument>install</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>angular-unit-tests</id>
             <phase>test</phase>
             <goals>
               <goal>exec</goal>

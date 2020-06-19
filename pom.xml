@@ -22,12 +22,15 @@
     <aws-java-sdk.version>1.11.799</aws-java-sdk.version>
     <s3mock.version>0.2.6</s3mock.version>
     <testcontainers.version>1.14.3</testcontainers.version>
+    <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
+    <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
   </properties>
 
   <modules>
     <module>domain</module>
     <module>service</module>
     <module>web</module>
+    <module>frontend</module>
   </modules>
 
   <dependencies>
@@ -85,5 +88,19 @@
         </configuration>
       </plugin>
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${exec-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${maven-clean-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>

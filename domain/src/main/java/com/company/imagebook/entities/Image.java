@@ -26,7 +26,7 @@ public class Image {
 
   public static final int MAX_DESCRIPTION_LENGTH = 120;
 
-  public static final long MAX_CONTENT_SIZE = 500;
+  public static final long MAX_CONTENT_SIZE = 500*1024;
 
   @Id
   @Column(length = ObjectId.ID_LENGTH)

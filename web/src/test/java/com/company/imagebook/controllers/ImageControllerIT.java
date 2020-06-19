@@ -53,7 +53,7 @@ class ImageControllerIT {
 
   private static final String JPEG_IMAGE_NAME = "blank.jpeg";
 
-  private static final String TOO_LARGE_IMAGE_NAME = "large.jpeg";
+  private static final String TOO_LARGE_IMAGE_NAME = "large.png";
 
   private static final String EMPTY_IMAGE_NAME = "empty.png";
 

@@ -1,0 +1,44 @@
+<div class="container row">
+  <div class="col-md-12">
+    <h1>ImageBook</h1>
+  </div>
+</div>
+<hr />
+<form (ngSubmit)="onSubmit()">
+  <div class="container row">
+    <div class="col-md-9">
+      <input type="file"
+        id="image"
+        name="image"
+        class="form-control-file"
+        (change)="onImageFileChange($event.target.files)"
+      />
+    </div>
+  </div>
+  <div class="container row">
+    <div class="col-md-9">
+      <input type="text" [(ngModel)]="description"
+        id="description"
+        name="description"
+        placeholder="Enter a description for the image."
+        minlength="1"
+        maxlength="120"
+        class="form-control"
+        size="100%"
+      />
+    </div>
+    <div class="col-md-3">
+      <input type="submit" value="upload"
+        id="upload"
+        class="btn btn-info"
+      />
+    </div>
+  </div>
+</form>
+<hr />
+<div class="container row">
+  <div class="col-md-12">
+    <div id="message">{{message}}</div>
+    <img *ngIf=imageUrl [src]="imageUrl" />
+  </div>
+</div>

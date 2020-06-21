@@ -2,9 +2,9 @@ spring:
   application:
     name: resourceapi
   datasource:
-    url: "jdbc:mysql://localhost:3306/imagebookdb"
-    username: root
-    password: secret
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:imagebookdb}
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:secret}
   jpa:
     show-sql: true
     hibernate:
@@ -18,7 +18,6 @@ spring:
       enabled: true
 aws:
   s3:
-    service-endpoint: "http://localhost:9090/"
     region: us-east-2
-    access-key: "use -Daws.s3.access-key"
-    secret-key: "use -Daws.s3.secret-key"
+    access-key: ${S3_ACCESSKEY:key}
+    secret-key: ${S3_SECRETKEY:secret}

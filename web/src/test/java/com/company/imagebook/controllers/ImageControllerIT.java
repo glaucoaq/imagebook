@@ -43,7 +43,9 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-@SpringBootTest
+@SpringBootTest(properties = {
+    "aws.s3.service-endpoint=http://localhost:9090/"
+})
 @Testcontainers
 @AutoConfigureMockMvc
 @ContextConfiguration(initializers = TestInitializer.class)

@@ -27,6 +27,7 @@ export class AppComponent {
     if (!!this.image) formPayload.append('image', this.image, this.image.name);
     if (!!this.description) formPayload.append('description', this.description);
 
+    this.message = this.imageUrl = '';
     this.httpClient
       .post<any>('http://localhost:8080/api/images', formPayload)
       .subscribe({

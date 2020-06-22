@@ -1,10 +1,10 @@
-package com.company.imagebook.services.amazonaws;
+package com.company.imagebook.services.storage.amazonaws;
 
-import static com.company.imagebook.services.amazonaws.AmazonS3Config.BUCKET_NAME;
+import static com.company.imagebook.services.storage.amazonaws.AmazonS3Config.BUCKET_NAME;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.company.imagebook.services.StorageService;
+import com.company.imagebook.services.storage.StorageService;
 import java.io.ByteArrayInputStream;
 import java.net.URL;
 import lombok.extern.slf4j.Slf4j;

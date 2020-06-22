@@ -1,4 +1,4 @@
-package com.company.imagebook;
+package com.company.imagebook.services;
 
 import static org.springframework.context.annotation.FilterType.ASSIGNABLE_TYPE;
 
@@ -7,7 +7,7 @@ import com.amazonaws.auth.AnonymousAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.company.imagebook.services.amazonaws.AmazonS3Config;
+import com.company.imagebook.services.storage.amazonaws.AmazonS3Config;
 import io.findify.s3mock.S3Mock;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;

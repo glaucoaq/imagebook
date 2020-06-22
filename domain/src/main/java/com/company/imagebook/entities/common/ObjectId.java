@@ -1,4 +1,4 @@
-package com.company.imagebook.common;
+package com.company.imagebook.entities.common;
 
 import java.nio.ByteBuffer;
 import java.util.Base64;

@@ -1,7 +1,7 @@
-package com.company.imagebook.services;
+package com.company.imagebook.services.image;
 
-import com.company.imagebook.entities.Image;
-import com.company.imagebook.entities.ImageType;
+import com.company.imagebook.entities.image.Image;
+import com.company.imagebook.entities.image.ImageType;
 import java.net.URL;
 import lombok.NonNull;
 import lombok.Value;

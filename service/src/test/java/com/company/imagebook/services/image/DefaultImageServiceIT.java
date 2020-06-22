@@ -1,4 +1,4 @@
-package com.company.imagebook.services;
+package com.company.imagebook.services.image;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.util.IOUtils;
-import com.company.imagebook.IntegrationTestConfig;
-import com.company.imagebook.entities.ImageType;
-import com.company.imagebook.services.amazonaws.AmazonS3Config;
+import com.company.imagebook.entities.image.ImageType;
+import com.company.imagebook.services.IntegrationTestConfig;
+import com.company.imagebook.services.storage.amazonaws.AmazonS3Config;
 import java.time.Instant;
 import javax.persistence.EntityManager;
 import lombok.val;
@@ -19,7 +19,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = IntegrationTestConfig.class)
+@SpringBootTest(
+    classes = IntegrationTestConfig.class,
+    properties = { "imagebook.search-size=5" }
+)
 class DefaultImageServiceIT {
 
   private static final String DESCRIPTION = "Image";

@@ -2,7 +2,7 @@ package com.company.imagebook.controllers;
 
 import static java.util.stream.Collectors.joining;
 
-import com.company.imagebook.exceptions.ConflictException;
+import com.company.imagebook.services.exceptions.ConflictException;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import lombok.Value;

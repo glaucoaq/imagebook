@@ -1,4 +1,4 @@
-package com.company.imagebook.services.amazonaws;
+package com.company.imagebook.services.storage.amazonaws;
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;

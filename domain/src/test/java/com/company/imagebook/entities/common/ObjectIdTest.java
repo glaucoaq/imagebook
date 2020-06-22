@@ -1,4 +1,4 @@
-package com.company.imagebook.common;
+package com.company.imagebook.entities.common;
 
 import static java.nio.charset.StandardCharsets.US_ASCII;
 import static org.hamcrest.MatcherAssert.assertThat;

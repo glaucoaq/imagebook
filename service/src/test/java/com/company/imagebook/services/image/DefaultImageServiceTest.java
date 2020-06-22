@@ -1,4 +1,4 @@
-package com.company.imagebook.services;
+package com.company.imagebook.services.image;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -11,10 +11,11 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.company.imagebook.entities.Image;
-import com.company.imagebook.entities.ImageType;
-import com.company.imagebook.exceptions.ConflictException;
-import com.company.imagebook.repositories.ImageRepository;
+import com.company.imagebook.entities.image.Image;
+import com.company.imagebook.entities.image.ImageRepository;
+import com.company.imagebook.entities.image.ImageType;
+import com.company.imagebook.services.exceptions.ConflictException;
+import com.company.imagebook.services.storage.StorageService;
 import java.net.URL;
 import lombok.val;
 import org.junit.jupiter.api.Test;

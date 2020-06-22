@@ -1,11 +1,12 @@
-package com.company.imagebook.controllers;
+package com.company.imagebook.controllers.image;
 
 import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 
-import com.company.imagebook.entities.Image;
-import com.company.imagebook.entities.ImageType;
-import com.company.imagebook.services.ImageCreateDTO;
-import com.company.imagebook.services.ImageService;
+import com.company.imagebook.entities.image.Image;
+import com.company.imagebook.entities.image.ImageType;
+import com.company.imagebook.services.image.ImageCreateDTO;
+import com.company.imagebook.services.image.ImageSearchDTO;
+import com.company.imagebook.services.image.ImageService;
 import com.company.imagebook.validation.ContentSize;
 import com.company.imagebook.validation.ContentType;
 import java.io.IOException;

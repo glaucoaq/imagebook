@@ -1,6 +1,6 @@
-package com.company.imagebook.entities;
+package com.company.imagebook.entities.image;
 
-import com.company.imagebook.common.ObjectId;
+import com.company.imagebook.entities.common.ObjectId;
 import java.net.URL;
 import java.time.Instant;
 import javax.persistence.Column;

@@ -1,5 +1,6 @@
-package com.company.imagebook.entities;
+package com.company.imagebook.entities.image;
 
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -8,6 +9,7 @@ public enum ImageType {
   PNG("image/png"),
   JPG("image/jpeg");
 
+  @Getter
   private final String mediaType;
 
   public static ImageType fromMediaType(@NonNull String mediaType) {

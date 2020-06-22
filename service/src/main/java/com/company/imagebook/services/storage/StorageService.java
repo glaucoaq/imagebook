@@ -1,4 +1,4 @@
-package com.company.imagebook.services;
+package com.company.imagebook.services.storage;
 
 import java.net.URL;
 

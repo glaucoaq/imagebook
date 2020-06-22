@@ -1,6 +1,6 @@
-package com.company.imagebook.services.amazonaws;
+package com.company.imagebook.services.storage.amazonaws;
 
-import static com.company.imagebook.services.amazonaws.AmazonS3Config.BUCKET_NAME;
+import static com.company.imagebook.services.storage.amazonaws.AmazonS3Config.BUCKET_NAME;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.eq;

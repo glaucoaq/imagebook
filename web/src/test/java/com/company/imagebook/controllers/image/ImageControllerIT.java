@@ -1,9 +1,9 @@
-package com.company.imagebook.controllers;
+package com.company.imagebook.controllers.image;
 
 import static com.company.imagebook.controllers.S3MockConfig.S3MOCK_IMAGE;
 import static com.company.imagebook.controllers.S3MockConfig.S3MOCK_PORT;
-import static com.company.imagebook.entities.Image.MAX_DESCRIPTION_LENGTH;
-import static com.company.imagebook.services.amazonaws.AmazonS3Config.BUCKET_NAME;
+import static com.company.imagebook.entities.image.Image.MAX_DESCRIPTION_LENGTH;
+import static com.company.imagebook.services.storage.amazonaws.AmazonS3Config.BUCKET_NAME;
 import static java.util.Collections.nCopies;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.matchesPattern;
@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.company.imagebook.controllers.ImageControllerIT.TestInitializer;
+import com.company.imagebook.controllers.image.ImageControllerIT.TestInitializer;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;

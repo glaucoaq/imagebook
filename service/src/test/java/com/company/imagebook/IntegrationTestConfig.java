@@ -1,4 +1,4 @@
-package com.company.imagebook.services;
+package com.company.imagebook;
 
 import static org.springframework.context.annotation.FilterType.ASSIGNABLE_TYPE;
 
@@ -12,6 +12,7 @@ import io.findify.s3mock.S3Mock;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -21,14 +22,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @Configuration
 @EnableJpaAuditing
-@EnableAutoConfiguration
+@EnableAutoConfiguration(
+    exclude = WebMvcAutoConfiguration.class
+)
 @ComponentScan(
     basePackages = "com.company.imagebook",
     excludeFilters = @Filter(type = ASSIGNABLE_TYPE, classes = AmazonS3Config.class)
 )
 public class IntegrationTestConfig {
 
-  public static final int S3MOCK_PORT = 9090;
+  public static final int S3MOCK_PORT = 9092;
 
   public static final String S3MOCK_REGION = "us-east-1";
 

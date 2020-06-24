@@ -4,5 +4,7 @@ import com.company.imagebook.entities.image.Image;
 
 public interface ImageService {
 
-  Image addImage(ImageCreateDTO createDTO);
+  Iterable<Image> search(ImageSearchRequest request, int page);
+
+  Image addImage(ImageCreateRequest request);
 }

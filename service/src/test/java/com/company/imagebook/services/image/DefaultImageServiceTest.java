@@ -43,7 +43,7 @@ class DefaultImageServiceTest {
     val description = "Any";
     val imageType = ImageType.JPG;
     val contentBytes = new byte[] { 0 };
-    val createDTO = ImageCreateDTO.of(description, imageType, contentBytes);
+    val createDTO = ImageCreateRequest.of(description, imageType, contentBytes);
     val imageURL = new URL("http://example/image");
 
     when(storageService.putObject(anyString(), eq(contentBytes))).thenReturn(imageURL);
@@ -64,7 +64,7 @@ class DefaultImageServiceTest {
   @Test
   void givenRepositoryInErrorWhenAddImageThenRemoveObjectAndThrowConflictException() throws Exception {
     // Arrange
-    val createDTO = ImageCreateDTO.of("any", ImageType.JPG, new byte[0]);
+    val createDTO = ImageCreateRequest.of("any", ImageType.JPG, new byte[0]);
     val imageURL = new URL("http://example/image");
 
     when(storageService.putObject(anyString(), any(byte[].class))).thenReturn(imageURL);

@@ -3,6 +3,7 @@ package com.company.imagebook.controllers;
 import static java.util.stream.Collectors.joining;
 
 import com.company.imagebook.services.exceptions.ConflictException;
+import com.company.imagebook.services.exceptions.MalformedSearchSyntaxException;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import lombok.Value;
@@ -43,5 +44,13 @@ public class ServiceExceptionHandler extends ResponseEntityExceptionHandler {
     return ResponseEntity
         .status(HttpStatus.BAD_REQUEST)
         .body(ErrorRecord.of(ConstraintViolationException.class.getSimpleName(), message));
+  }
+
+  @ExceptionHandler(MalformedSearchSyntaxException.class)
+  protected ResponseEntity<ErrorRecord> handleMalformedSearchSyntaxException(MalformedSearchSyntaxException exception) {
+    log.info("Cannot handle request due to search syntax error: {}", exception.getMessage());
+    return ResponseEntity
+        .status(HttpStatus.BAD_REQUEST)
+        .body(ErrorRecord.of(MalformedSearchSyntaxException.class.getSimpleName(), exception.getMessage()));
   }
 }

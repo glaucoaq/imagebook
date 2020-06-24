@@ -1,6 +1,7 @@
 import { HttpClient, HttpEventType, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 
+import { environment } from '../environments/environment'
 import { Image } from './image';
 import { ImageResponse } from './image-response';
 
@@ -43,7 +44,7 @@ export class AppComponent {
 
     this.message = '';
     this.httpClient
-      .post<Image>('http://localhost:8080/api/images', formPayload)
+      .post<Image>(environment.imagesEndpointUrl, formPayload)
       .subscribe({
         next: data => this.response = new ImageResponse([ data ], 0, true),
         error: ({ error }) => this.message = `Failed to upload the image. ${error?.message ?? ''}`,
@@ -64,7 +65,7 @@ export class AppComponent {
     params = this.minSize ? params.set("min-size", String(this.minSize)) : params;
 
     this.httpClient
-      .get<ImageResponse>('http://localhost:8080/api/images', { params })
+      .get<ImageResponse>(environment.imagesEndpointUrl, { params })
       .pipe(delay(append ? 1500 : 500)) // to give us a chance to see the loading message
       .subscribe({
         next: data => this.response = append

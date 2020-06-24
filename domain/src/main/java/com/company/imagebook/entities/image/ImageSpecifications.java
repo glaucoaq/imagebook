@@ -21,6 +21,7 @@ public final class ImageSpecifications {
           .orElse(null);
     }
     return (root, query, builder) -> builder.or(
+        builder.equal(root.get("description"), description),
         builder.like(root.get("description"), description + " %"),
         builder.like(root.get("description"), "% " + description),
         builder.like(root.get("description"), "% " + description + " %"));

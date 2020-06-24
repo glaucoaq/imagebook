@@ -1,5 +1,5 @@
 import { HttpClient, HttpEventType, HttpParams } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 import { environment } from '../environments/environment'
 import { Image } from './image';
@@ -14,6 +14,8 @@ import { delay } from 'rxjs/operators';
 })
 export class AppComponent {
   constructor(private httpClient: HttpClient) { }
+
+  @ViewChild('inputFile') inputFile: ElementRef;
 
   image: File;
   description: string;
@@ -48,13 +50,20 @@ export class AppComponent {
       .subscribe({
         next: data => this.response = new ImageResponse([ data ], 0, true),
         error: ({ error }) => this.message = `Failed to upload the image. ${error?.message ?? ''}`,
-        complete: () => this.message = 'Image uploaded successfully'
+        complete: () => {
+          this.inputFile.nativeElement.value = this.image = this.description = null;
+          this.message = 'Image uploaded successfully';
+        }
       });
   }
 
   onSearch(append: boolean) {
     if (append && this.response.last) {
       return;
+    }
+
+    if (!append) {
+      this.response = null;
     }
 
     const page = (append && this.response) ? this.response.number + 1 : 0;

@@ -7,7 +7,7 @@
 <form (ngSubmit)="onSubmit()">
   <div class="form-group container row">
     <div class="col-md-9">
-      <input type="file"
+      <input type="file" #inputFile
         id="image"
         name="image"
         class="form-control-file"
@@ -46,7 +46,7 @@
   <div class="form-group container row">
     <div class="col-md-9">
       <input [(ngModel)]="searchText"
-        id="search-searchText"
+        id="searchText"
         name="searchText"
         placeholder="Enter words for searching in descriptions."
         autocomplete="off"
@@ -92,12 +92,14 @@
 </form>
 <div class="container row">
   <div *ngFor="let image of response?.content" class="col-md-4">
-    <img [src]="image.imageUrl" width="300" />
-    <div>{{ image.description }}</div>
-    <small>type: {{ image.imageType }} - {{ image.contentSize }} bytes</small>
+    <div class="image-card">
+      <img [src]="image.imageUrl" />
+      <span>{{ image.description }}</span>
+      <small>type: {{ image.imageType }} - {{ image.contentSize }} bytes</small>
+    </div>
   </div>
   <div *ngIf="response && (response.content.length === 0)" class="col-md-12 empty">
-    No images found for this search.
+    No images found for this search
   </div>
 </div>
 <div *ngIf="!(response?.last)" class="container row">

@@ -64,10 +64,9 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>ng</executable>
+              <executable>npm</executable>
               <arguments>
                 <argument>test</argument>
-                <argument>--watch=false</argument>
               </arguments>
             </configuration>
           </execution>

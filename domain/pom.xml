@@ -4,7 +4,7 @@
 
   <parent>
     <groupId>com.company.imagebook</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>imagebook</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
@@ -24,6 +24,12 @@
     <dependency>
       <groupId>org.flywaydb</groupId>
       <artifactId>flyway-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

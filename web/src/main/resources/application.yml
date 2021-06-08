@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: resourceapi
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:imagebookdb}
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:secret}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+aws:
+  s3:
+    region: us-east-2
+    access-key: ${S3_ACCESSKEY:key}
+    secret-key: ${S3_SECRETKEY:secret}
+imagebook:
+  search-size: 20

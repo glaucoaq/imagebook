@@ -1,0 +1,23 @@
+.image-card {
+  border: 2px solid #fee0e0;
+    margin: 4px;
+    padding: 8px;
+}
+.image-card img {
+  width: 312px;
+}
+.image-card span {
+  display: block;
+}
+.empty {
+  font-style: italic;
+  padding: 4px;
+  background-color: #f0c0c0;
+}
+
+.loading {
+  font-style: italic;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #e0e0e0;
+}

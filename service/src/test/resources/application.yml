@@ -1,0 +1,16 @@
+spring:
+  test:
+    database:
+      replace: NONE
+  datasource:
+    url: "jdbc:h2:mem:imagebook;MODE=MYSQL;DATABASE_TO_LOWER=TRUE"
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+imagebook:
+  search-size: 3
